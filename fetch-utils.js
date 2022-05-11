@@ -8,3 +8,7 @@ export async function getJuices() {
     return resp.data;
 }
 
+export async function getJuiceById(id) {
+    const resp = await client.from('juices').select('*').match({ id: id }).single();
+    return resp.data;
+}
